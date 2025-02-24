@@ -43,4 +43,7 @@ Create a new system variables named "LIB", and add the following to the list.
 > C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\lib\x64; <br>
 > C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\ucrt\x64; <br>
 > C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\um\x64; <br>
-> 
+
+When running mexcuda in matlab, one should first type
+> setenv("NVCC_APPEND_FLAGS", '-allow-unsupported-compiler')
+in the MATLAB command line so that the MATLAB can use the compiler of VS 2022 community. Otherwise the MATLAB may pop up warning. 
