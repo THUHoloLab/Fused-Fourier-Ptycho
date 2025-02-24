@@ -32,7 +32,7 @@ To build the codes "fullyfusedFPM.cu" you will need  "mexcuda" to run "mexcuda -
 
 The "mexcuda" need several preconditions.
 First, to download [Visual studio 2022 community](https://visualstudio.microsoft.com/vs/community/) and add "cl.exe" into the environment variables.
-Then, to download "Windows SDK".
+Then, to download [Windows SDK](https://developer.microsoft.com/en-us/windows/downloads/windows-sdk/).
 Third, when the first and second steps were done, the following should be added to the environment variables
 
 > C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\bin\Hostx64\x64
