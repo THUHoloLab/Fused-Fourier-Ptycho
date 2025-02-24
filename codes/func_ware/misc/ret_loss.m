@@ -1,0 +1,23 @@
+function [loss,out] = ret_loss(dW,type,p)
+
+RxdW = [dW(:,2:end,:) - dW(:,1:end-1,:), dW(:,1,:) - dW(:,end,:)];
+RydW = [dW(2:end,:,:) - dW(1:end-1,:,:); dW(1,:,:) - dW(end,:,:)];
+
+switch type
+    case 'isotropic'
+        den = sqrt(RxdW.^2 + RydW.^2) + 1e-5;
+        loss = sqrt((RxdW).^2 + (RydW).^2);
+        ox = RxdW./den;
+        oy = RydW./den;
+    case 'anisotropic' 
+        loss = abs(RxdW) + abs(RydW);
+        ox = sign(RxdW) .* (abs(RxdW)+1e-5).^(p-1);
+        oy = sign(RydW) .* (abs(RydW)+1e-5).^(p-1);
+    otherwise
+    error("parameter #3 should be a string either 'isotropic', or 'anisotropic'")
+end
+
+out = [ox(:,end,:) - ox(:, 1,:), ox(:,1:end-1,:) - ox(:,2:end,:)];
+out = out + [oy(end,:,:) - oy(1, :,:); oy(1:end-1,:,:) - oy(2:end,:,:)];
+loss = sum(loss(:));
+end
