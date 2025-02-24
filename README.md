@@ -10,7 +10,7 @@ The codes were tested on a personal desktop running a Windows 11 OS, with 64GB R
 
 In FPM implementation, a total of **361 images** were collected with **2048 by 2048 pixels** 16bits. The reconstruction upsample rate is 8 so the reconstructed image is of **16384 by 16384** pixels. 
 
-The reconstruction duration using the fused FP is **100s** on average compared to conventional MATLAB GPU implementation, which tasks about **300s**. Acceleration by about 3 folds.
+The reconstruction duration using the fused FP is **100s** on average compared to conventional MATLAB GPU implementation, which tasks about **300s**. Acceleration is about **3 folds**.
 
 ## Requirements
 
