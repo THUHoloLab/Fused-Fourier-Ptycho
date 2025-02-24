@@ -31,7 +31,7 @@ The cuda codes are designed and implemented based on MATLAB c++ interfaces inclu
 To build the codes "fullyfusedFPM.cu" you will need  "mexcuda" to run "mexcuda -lcufft fullyfusedFPM.cu" command in the command line of the MATLAB, at the root of the file "fullyfusedFPM.cu".
 
 The "mexcuda" need several preconditions.
-First, to download "visual studio 2022 community" and add "cl.exe" into the environment variables.
+First, to download [Visual studio 2022 community](https://visualstudio.microsoft.com/vs/community/) and add "cl.exe" into the environment variables.
 Then, to download "Windows SDK".
 Third, when the first and second steps were done, the following should be added to the environment variables
 
