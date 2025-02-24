@@ -16,7 +16,7 @@ The reconstruction duration using the fused FP is **100s** on average compared t
 
 * MATLAB 2024b
 * CUDA v12.8
-* Visual Studio 2022 community.
+* Visual Studio 2022 community
 
 ## To Build the codes
 
