@@ -33,7 +33,7 @@ Third, when the first and second steps were done, the following should be added 
 
 Create a new system variables named "INCLUDE", and add the following to the list.
 
-> C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include; <\br>
+> C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include; <br>
 > C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt; <br>
 > C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um; <br>
 > C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared; <br>
