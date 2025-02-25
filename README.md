@@ -63,5 +63,22 @@ When running mexcuda in MATLAB, one should first type
 
 in the MATLAB command line so that MATLAB can use the compiler of the VS 2022 community. Otherwise, MATLAB may pop up errors. 
 
+## License and Citation
+
+This framework is licensed under the BSD 3-clause license. Please see `LICENSE.txt` for details.
+
+If you use it in your research, we would appreciate a citation via
+```bibtex
+@software{CUDA-fused FPM,
+	author = {THU Hololab},
+	license = {BSD-3-Clause},
+	month = {2},
+	title = {{CUDA-fused FPM}},
+	url = {https://github.com/THUHoloLab/FusedFourierPtycho},
+	version = {1.0},
+	year = {2025}
+}
+```
+
 ## Questions?
 If you find any questions during the implementation please feel-free to open an issue. Thank you very much :blush:!
