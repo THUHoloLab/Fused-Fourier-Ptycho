@@ -16,7 +16,7 @@ The reconstruction duration using the fused FP is **100s** on average compared t
 | --------   | -----:  |
 | MATLAB    | 800 s   |
 | MATLAB + GPU        |   310 s   |
-| MATLAB + CUDA (fused FPM)        |    100.2 s    |
+| MATLAB + CUDA (fused FPM)        |    100 s    |
 
 ## Requirements
 
