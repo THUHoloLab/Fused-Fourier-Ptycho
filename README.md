@@ -74,7 +74,7 @@ If you use it in your research, we would appreciate a citation via
 	license = {BSD-3-Clause},
 	month = {2},
 	title = {{CUDA-fused FPM}},
-	url = {https://github.com/THUHoloLab/FusedFourierPtycho},
+	url = {https://github.com/THUHoloLab/Fused-Fourier-Ptycho},
 	version = {1.0},
 	year = {2025}
 }
