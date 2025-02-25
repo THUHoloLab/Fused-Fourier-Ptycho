@@ -1,4 +1,4 @@
-# CUDA fused Fourier ptychography
+# CUDA-fused Fourier ptychography
 
 This is an implementation of MATLAB + CUDA programming for the acceleration of Fourier ptychographic microscopy (FPM) reconstruction.
 
