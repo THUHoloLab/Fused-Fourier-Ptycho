@@ -1,3 +1,16 @@
+// This framework is licensed under the BSD 3-clause license.
+// If you use it in your research, we would appreciate a citation via
+//
+// @software{CUDA-fused FPM,
+// 	  author = {THU Hololab},
+// 	  license = {BSD-3-Clause},
+// 	  month = {2},
+// 	  title = {{CUDA-fused FPM}},
+// 	  url = {https://github.com/THUHoloLab/FusedFourierPtycho},
+// 	  version = {1.0},
+// 	  year = {2025}
+// }
+
 #include "mex.h"
 #include "cuda/mxGPUArray.h"
 #include "cuda/kernel_foo.cu"
