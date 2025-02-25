@@ -1,6 +1,6 @@
 # CUDA-fused Fourier ptychography
 
-This is an implementation of MATLAB + CUDA programming for the acceleration of Fourier ptychographic microscopy (FPM) reconstruction.
+This is an implementation of MATLAB + CUDA programming for the acceleration of Fourier ptychographic microscopy (FPM) reconstruction. FPM's forward and backward progress are all calculated purely by CUDA in "fullyfusedFPM.cu".
 
 :bell: The codes were built based on MATLAB 2024b and CUDA v12.8, and were tested with a graphic card of NIVIDA RTX 3090 24GB.
 
