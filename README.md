@@ -23,7 +23,7 @@ The reconstruction duration using the fused FP is **100s** on average compared t
 | MATLAB + CUDA (fused FPM) | 2048    × 2048 × 361     | 16384 × 16384   | 26          | 100 s   |
 
 ## Requirements
-* An NVIDIA GPU; tensor cores increase performance when available. All shown results come from an RTX 3090.
+* An NVIDIA GPU; All shown results come from an RTX 3090.
 * MATLAB 2024b
 * CUDA v12.8
 * Visual Studio 2022 Community
