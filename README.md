@@ -29,7 +29,7 @@ The reconstruction duration using the fused FP is **100s** on average compared t
 * Visual Studio 2022 Community
 * Windows Kits 10.0.26100.0 (higher version may be available but not tested)
 
-## To Build the codes
+## To build the codes
 
 The cuda codes are designed and implemented based on MATLAB c++ interfaces including "mex.h" and "mxGPUArray.h". The "mex.h" provides basic support to mex and to build the cuda codes. The "mxGPUArray.h" provides support for the array types of MATLAB.
 
