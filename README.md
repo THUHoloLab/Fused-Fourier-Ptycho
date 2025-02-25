@@ -8,7 +8,7 @@ This is an implementation of MATLAB + CUDA programming for the acceleration of F
 ## Acceleration ratio
 
 The codes were tested on a personal desktop <br>
-* OS: WINDOWS 11 Pro x64, with 64GB RAM <br>
+* OS: WINDOWS 11 Pro x64, with 128GB RAM <br>
 * GPU: NVIDIA RTX 3090 24GB <br>
 * CPU: 12th Gen Intel(R) Core(TM) i9-12900K 3.2GHz <br>
 
