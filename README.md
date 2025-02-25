@@ -14,7 +14,7 @@ In FPM implementation, a total of **361 images** were collected with **2048 by 2
 The reconstruction duration using the fused FP is **100s** on average compared to conventional MATLAB GPU implementation, which tasks about **300s**. Acceleration is about **3 folds**.
 
 | Implementation          | Size of input images       | Reconstructed size   | Batch size | Execution duration (s)   | 
-| --------                | -----:                     | -----:        | -----:          | -----:  |
+| --------                | :----:                     | :-----:        | :-----:          | :-----:  |
 | MATLAB                   | 2048    × 2048 × 361      | 16384 × 16384   | 26            | 800 s   |
 | MATLAB + GPU              | 2048    × 2048 × 361     | 16384 × 16384   | 26           | 310 s   |
 | MATLAB + CUDA (fused FPM) | 2048    × 2048 × 361     | 16384 × 16384   | 26          | 100 s   |
