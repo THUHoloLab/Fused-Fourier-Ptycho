@@ -7,7 +7,10 @@ This is an implementation of MATLAB + CUDA programming for the acceleration of F
 :collision: **The codes are only available for images with even numbers of pixels** due to the implementation of "fftshift" kernel. [[cufftShift]](https://github.com/marwan-abdellah/cufftShift)
 ## Acceleration ratio
 
-The codes were tested on a personal desktop running a Windows 11 Pro x64, with 64GB RAM, and a graphic card of NIVIDA RTX 3090 24GB.
+The codes were tested on a personal desktop <br>
+OS: WINDOWS 11 Pro x64, with 64GB RAM <br>
+GPU: NVIDIA RTX 3090 24GB <br>
+CPU: 12th Gen Intel(R) Core(TM) i9-12900K 3.2GHz <br>
 
 In FPM implementation, a total of **361 images** were collected with **2048 by 2048 pixels** 16 bits. The reconstruction upsample rate is 8 so the resolution of the reconstructed image is **16384 by 16384** pixels. [[dataset]](https://drive.google.com/drive/folders/1oWm-0svOYzlnrEdqr_P8A-UoB4-NcQxF?usp=drive_link).
 
