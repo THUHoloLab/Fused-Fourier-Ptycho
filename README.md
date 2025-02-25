@@ -2,9 +2,9 @@
 
 This is an implementation of MATLAB + CUDA programming for the acceleration of Fourier ptychographic microscopy (FPM) reconstruction.
 
-The codes were built based on MATLAB 2024b and CUDA v12.8, and were tested with a graphic card of NIVIDA RTX 3090 24GB.
+:bell: The codes were built based on MATLAB 2024b and CUDA v12.8, and were tested with a graphic card of NIVIDA RTX 3090 24GB.
 
-**The codes are only available for images with even numbers pixel** due to the implementation of "fftshift" kernel. [[cufftShift]](https://github.com/marwan-abdellah/cufftShift)
+:collision: **The codes are only available for images with even numbers of pixels** due to the implementation of "fftshift" kernel. [[cufftShift]](https://github.com/marwan-abdellah/cufftShift)
 ## Acceleration ratio
 
 The codes were tested on a personal desktop running a Windows 11 Pro x64, with 64GB RAM, and a graphic card of NIVIDA RTX 3090 24GB.
@@ -33,7 +33,7 @@ The cuda codes are designed and implemented based on MATLAB c++ interfaces inclu
 To build the codes "fullyfusedFPM.cu" you will need  "mexcuda" to run "mexcuda -lcufft fullyfusedFPM.cu" command in the command line of the MATLAB, at the root of the file "fullyfusedFPM.cu". "-lcufft" is a setting for "mexcuda" that tells the code to use "cuFFT.h", the CUDA fast Fourier transform library [[cuFFT]](https://docs.nvidia.com/cuda/cufft/).
 
 The "mexcuda" needs several preconditions.
-First, to download [Visual studio 2022 community](https://visualstudio.microsoft.com/vs/community/) and add "cl.exe" into the environment variables.
+First, to download [Visual Studio 2022 community](https://visualstudio.microsoft.com/vs/community/) and add "cl.exe" into the environment variables.
 Then, to download [Windows SDK](https://developer.microsoft.com/en-us/windows/downloads/windows-sdk/).
 Third, when the first and second steps were done, the following should be added to the environment variables
 
@@ -55,4 +55,7 @@ Create a new system variable named "LIB", and add the following to the list.
 When running mexcuda in MATLAB, one should first type
 > setenv("NVCC_APPEND_FLAGS", '-allow-unsupported-compiler')
 
-in the MATLAB command line so that MATLAB can use the compiler of the VS 2022 community. Otherwise, the MATLAB may pop up warning. 
+in the MATLAB command line so that MATLAB can use the compiler of the VS 2022 community. Otherwise, MATLAB may pop up errors. 
+
+## Questions?
+If you find any questions during the implementation please feel-free to open an issue. Thank you very much :blush:!
