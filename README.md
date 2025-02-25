@@ -4,6 +4,7 @@ This is an implementation of MATLAB + CUDA programming for the acceleration of F
 
 The codes were built based on MATLAB 2024b and CUDA v12.8, and were tested with a graphic card of NIVIDA RTX 3090 24GB.
 
+The codes is only available for image with even numbers due to the implementation of "fftshift" kernel. [[cufftShift]](https://github.com/marwan-abdellah/cufftShift)
 ## Acceleration ratio
 
 The codes were tested on a personal desktop running a Windows 11 Pro x64, with 64GB RAM, and a graphic card of NIVIDA RTX 3090 24GB.
