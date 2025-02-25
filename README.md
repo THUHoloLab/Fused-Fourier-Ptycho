@@ -22,35 +22,35 @@ The reconstruction duration using the fused FP is **100s** on average compared t
 
 * MATLAB 2024b
 * CUDA v12.8
-* Visual Studio 2022 community
+* Visual Studio 2022 Community
 
 ## To Build the codes
 
-The cuda codes are designed and implemented based on MATLAB c++ interfaces including "mex.h" and "mxGPUArray.h". The "mex.h" provide basic support to mex and build the cuda codes. The "mxGPUArray.h" provides support for the array types of MATLAB.
+The cuda codes are designed and implemented based on MATLAB c++ interfaces including "mex.h" and "mxGPUArray.h". The "mex.h" provides basic support to mex and to build the cuda codes. The "mxGPUArray.h" provides support for the array types of MATLAB.
 
 To build the codes "fullyfusedFPM.cu" you will need  "mexcuda" to run "mexcuda -lcufft fullyfusedFPM.cu" command in the command line of the MATLAB, at the root of the file "fullyfusedFPM.cu".
 
-The "mexcuda" need several preconditions.
+The "mexcuda" needs several preconditions.
 First, to download [Visual studio 2022 community](https://visualstudio.microsoft.com/vs/community/) and add "cl.exe" into the environment variables.
 Then, to download [Windows SDK](https://developer.microsoft.com/en-us/windows/downloads/windows-sdk/).
 Third, when the first and second steps were done, the following should be added to the environment variables
 
 > C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\bin\Hostx64\x64
 
-Create a new system variables named "INCLUDE", and add the following to the list.
+Create a new system variable named "INCLUDE", and add the following to the list.
 
 > C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include; <br>
 > C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt; <br>
 > C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um; <br>
 > C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared; <br>
 
-Create a new system variables named "LIB", and add the following to the list.
+Create a new system variable named "LIB", and add the following to the list.
 
 > C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\lib\x64; <br>
 > C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\ucrt\x64; <br>
 > C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\um\x64; <br>
 
-When running mexcuda in matlab, one should first type
+When running mexcuda in MATLAB, one should first type
 > setenv("NVCC_APPEND_FLAGS", '-allow-unsupported-compiler')
 
-in the MATLAB command line so that the MATLAB can use the compiler of VS 2022 community. Otherwise the MATLAB may pop up warning. 
+in the MATLAB command line so that MATLAB can use the compiler of the VS 2022 community. Otherwise, the MATLAB may pop up warning. 
