@@ -1,6 +1,6 @@
-# CUDA-fused Fourier ptychography
+# CUDA-fused Fourier ptychography (cuFPM)
 
-This is an implementation of MATLAB + CUDA programming for the acceleration of Fourier ptychographic microscopy (FPM) reconstruction. FPM's forward and backward progress are all calculated purely by CUDA in "fullyfusedFPM.cu".
+This implements MATLAB + CUDA programming for the acceleration of Fourier ptychographic microscopy (FPM) reconstruction. FPM's forward and backward progress are all calculated purely by CUDA in "fullyfusedFPM.cu".
 
 :bell: The codes were built based on MATLAB 2024b and CUDA v12.8, and were tested with a graphic card of NVIDIA RTX 3090 24GB.
 
@@ -20,7 +20,12 @@ The reconstruction duration using the fused FP is **100s** on average compared t
 | --------                | :----:                     | :-----:        | :-----:          | :-----:  |
 | MATLAB                   | 2048    × 2048 × 361      | 16384 × 16384   | 26            | 800 s   |
 | MATLAB + GPU              | 2048    × 2048 × 361     | 16384 × 16384   | 26           | 310 s   |
-| MATLAB + CUDA (fused FPM) | 2048    × 2048 × 361     | 16384 × 16384   | 26          | 100 s   |
+| MATLAB + CUDA (cuFPM) | 2048    × 2048 × 361     | 16384 × 16384   | 26          | 100 s   |
+| cuFPM-v2 | 2048    × 2048 × 361     | 16384 × 16384   | 26          | 68 s   |
+| cuFPM-v2 | 2048    × 2048 × 361     | 16384 × 16384   | 36          | 54 s   |
+| cuFPM-v2 | 512    × 512 × 361     | 4096 × 4096   | 26          | 2.5 s   |
+| cuFPM-v2 | 1024    × 1024 × 361     | 8192 × 8192   | 26          | 10.3 s   |
+| cuFPM-v2 | 2048    × 2048 × 93     | 16384 × 16384   | 26          | 21 s   |
 
 ## Requirements
 * An NVIDIA GPU; All shown results come from an RTX 3090.
