@@ -42,12 +42,12 @@ The reconstruction duration using the fused FP is **100s** on average compared t
 
 ## To build the codes
 
-The cuda codes are designed and implemented based on MATLAB c++ interfaces including "mex.h" and "mxGPUArray.h". The "mex.h" provides basic support to mex and to build the cuda codes. The "mxGPUArray.h" provides support for the array types of MATLAB.
+The cuda codes are designed and implemented based on MATLAB c++ interfaces including "mex.h" and "mxGPUArray.h". The "mex.h" provides basic support for mex and to build the cuda codes. The "mxGPUArray.h" provides support for the array types of MATLAB.
 
 To build the codes "fullyfusedFPM.cu" you will need  "mexcuda" to run 
 >mexcuda -lcufft fullyfusedFPM.cu
 
-command in the command line of the MATLAB, at the root of the file "fullyfusedFPM.cu". "-lcufft" is a setting for "mexcuda" that tells the code to use "cuFFT.h", the CUDA fast Fourier transform library [[cuFFT]](https://docs.nvidia.com/cuda/cufft/).
+command in the command line of the MATLAB, at the root of the file "fullyfusedFPM.cu". "-lcufft" is a setting for "mexcuda" that tells the mex to use "cuFFT.h", the CUDA fast Fourier transform library [[cuFFT]](https://docs.nvidia.com/cuda/cufft/).
 
 The "mexcuda" needs several preconditions.
 First, to download [Visual Studio 2022 community](https://visualstudio.microsoft.com/vs/community/) and add "cl.exe" into the environment variables.
