@@ -27,6 +27,10 @@ The reconstruction duration using the fused FP is **100s** on average compared t
 | cuFPM-v2 | 1024    × 1024 × 361     | 8192 × 8192   | 26          | 10.3 s   |
 | cuFPM-v2 | 2048    × 2048 × 93     | 16384 × 16384   | 26          | 21 s   |
 
+<div align = 'center'>
+<img src = "https://github.com/THUHoloLab/Fused-Fourier-Ptycho/blob/main/sources/benchmark.jpg" width = "600" alt="" align = center />
+</div><br>
+
 ## Requirements
 * An NVIDIA GPU; All shown results come from an RTX 3090.
 * MATLAB 2024b
