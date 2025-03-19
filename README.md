@@ -15,7 +15,7 @@ The codes were tested on a personal desktop <br>
 The following image shows the benchmarks. The cuFPM was compared against MATLAB + CPU or MATLAB + GPU. The raw image is of 21gigapixel which can be obtained from [here](http://profoundism.com/21_gigapixel_total_renovation_of_girl_with_a_pearl_earring_for_sale_to_the_wisest_art_lover.html). 
 
 <div align = 'center'>
-<img src = "https://github.com/THUHoloLab/Fused-Fourier-Ptycho/blob/main/sources/benchmark.jpg" width = "800" alt="" align = center />
+<img src = "https://github.com/THUHoloLab/Fused-Fourier-Ptycho/blob/main/sources/benchmark.jpg" width = "700" alt="" align = center />
 </div><br>
 
 In FPM implementation, a total of **361 images** were collected with **2048 by 2048 pixels** 16 bits. The reconstruction upsample rate is 8 so the resolution of the reconstructed image is **16384 by 16384** pixels. [[dataset]](https://drive.google.com/drive/folders/1oWm-0svOYzlnrEdqr_P8A-UoB4-NcQxF?usp=drive_link).
