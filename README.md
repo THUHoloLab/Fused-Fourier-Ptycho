@@ -12,6 +12,12 @@ The codes were tested on a personal desktop <br>
 * GPU: NVIDIA RTX 3090 24GB <br>
 * CPU: 12th Gen Intel(R) Core(TM) i9-12900K 3.2GHz <br>
 
+The following image shows the benchmarks. The cuFPM was compared against MATLAB + CPU or MATLAB + GPU. The raw image is of 21gigapixel which can be obtained from [here](http://profoundism.com/21_gigapixel_total_renovation_of_girl_with_a_pearl_earring_for_sale_to_the_wisest_art_lover.html). 
+
+<div align = 'center'>
+<img src = "https://github.com/THUHoloLab/Fused-Fourier-Ptycho/blob/main/sources/benchmark.jpg" width = "800" alt="" align = center />
+</div><br>
+
 In FPM implementation, a total of **361 images** were collected with **2048 by 2048 pixels** 16 bits. The reconstruction upsample rate is 8 so the resolution of the reconstructed image is **16384 by 16384** pixels. [[dataset]](https://drive.google.com/drive/folders/1oWm-0svOYzlnrEdqr_P8A-UoB4-NcQxF?usp=drive_link).
 
 The reconstruction duration using the fused FP is **100s** on average compared to conventional MATLAB GPU implementation, which tasks about **300s**. Acceleration is about **3 folds**.
@@ -26,10 +32,6 @@ The reconstruction duration using the fused FP is **100s** on average compared t
 | cuFPM-v2 | 512    × 512 × 361     | 4096 × 4096   | 26          | 2.5 s   |
 | cuFPM-v2 | 1024    × 1024 × 361     | 8192 × 8192   | 26          | 10.3 s   |
 | cuFPM-v2 | 2048    × 2048 × 93     | 16384 × 16384   | 26          | 21 s   |
-
-<div align = 'center'>
-<img src = "https://github.com/THUHoloLab/Fused-Fourier-Ptycho/blob/main/sources/benchmark.jpg" width = "600" alt="" align = center />
-</div><br>
 
 ## Requirements
 * An NVIDIA GPU; All shown results come from an RTX 3090.
