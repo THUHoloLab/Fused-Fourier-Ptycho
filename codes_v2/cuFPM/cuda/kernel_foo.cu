@@ -32,6 +32,17 @@
 #include <cooperative_groups.h>
 #include <iostream>
 
+inline __device__ float absC(const creal32_T in, const float ratio){
+    float out;
+    out = sqrtf(in.re * in.re + in.im * in.im) / ratio;
+    return out;
+}
+
+inline __device__ float sign(const float in){
+    float out;
+    out = copysignf(1.0f,in);
+    return out;
+}
 
 namespace cg = cooperative_groups;
 
