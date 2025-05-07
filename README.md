@@ -75,7 +75,10 @@ When running mexcuda in MATLAB, one should first type
 in the MATLAB command line so that MATLAB can use the compiler of VS 2022 Community. Otherwise, MATLAB may pop up errors. 
 
 ### for codes_v2:
-The codes_v2 folder contains a pure CUDA C++ implementation of FPM reconstruction with MATLAB as an interface for data reading/loading and checking. To build the CUDA codes, first, please make sure that all requirements mentioned above are met. Then run "build.m" in the "codes_v2/cuFPM/" folder. The MATLAB should create a subfolder named "mex_obj" and finish three compilations. The generated "cuFPM_pure.mexw64" is available to be called by MATLAB. 
+The codes_v2 folder contains a pure CUDA C++ implementation of FPM reconstruction with MATLAB as an interface for data reading/loading and checking. 
+* To build the CUDA codes, first, please make sure that all requirements mentioned above are met.
+* Then run "build.m" in the "codes_v2/cuFPM/" folder. The MATLAB should create a subfolder named "mex_obj" and finish three compilations.
+* The generated "cuFPM_pure.mexw64" is available to be called by MATLAB. 
 
 ## License and Citation
 
