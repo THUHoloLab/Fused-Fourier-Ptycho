@@ -1,4 +1,4 @@
-#include "helpers.h"
+#include "helpers.cuh"
 
 void FFT_sample_forward(
     const int sz_h,
