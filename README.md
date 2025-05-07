@@ -2,9 +2,9 @@
 
 This implements MATLAB + CUDA programming for the acceleration of Fourier ptychographic microscopy (FPM) reconstruction. FPM's forward and backward progress are all calculated purely by CUDA in "fullyfusedFPM.cu".
 
-:bell: The codes were built based on MATLAB 2024b and CUDA v12.8, and were tested with a graphic card of NVIDIA RTX 3090 24GB.
+:bell: The codes were built based on MATLAB 2024b and CUDA v12.8, and were tested with a graphic card of NVIDIA RTX 3090 24 GB.
 
-:collision: **The codes are only available for images with even numbers of pixels** due to the implementation of "fftshift" kernel. [[cufftShift]](https://github.com/marwan-abdellah/cufftShift)
+:collision: **The codes are only available for images with even numbers of pixels** due to the implementation of the "fftshift" kernel. [[cufftShift]](https://github.com/marwan-abdellah/cufftShift)
 ## Acceleration ratio
 
 The codes were tested on a personal desktop <br>
@@ -12,15 +12,15 @@ The codes were tested on a personal desktop <br>
 * GPU: NVIDIA RTX 3090 24GB <br>
 * CPU: 12th Gen Intel(R) Core(TM) i9-12900K 3.2GHz <br>
 
-The following image shows the benchmarks. The cuFPM was compared against MATLAB + CPU or MATLAB + GPU. The raw image is of 21gigapixel which can be obtained from [here](http://profoundism.com/21_gigapixel_total_renovation_of_girl_with_a_pearl_earring_for_sale_to_the_wisest_art_lover.html). 
+The following image shows the benchmarks. The cuFPM was compared against MATLAB + CPU or MATLAB + GPU. The raw image is of 21gigapixel, which can be obtained from [here](http://profoundism.com/21_gigapixel_total_renovation_of_girl_with_a_pearl_earring_for_sale_to_the_wisest_art_lover.html). 
 
 <div align = 'center'>
 <img src = "https://github.com/THUHoloLab/Fused-Fourier-Ptycho/blob/main/sources/benchmark.jpg" width = "700" alt="" align = center />
 </div><br>
 
-In FPM implementation, a total of **361 images** were collected with **2048 by 2048 pixels** 16 bits. The reconstruction upsample rate is 8 so the resolution of the reconstructed image is **16384 by 16384** pixels. [[dataset]](https://drive.google.com/drive/folders/1oWm-0svOYzlnrEdqr_P8A-UoB4-NcQxF?usp=drive_link).
+In FPM implementation, a total of **361 images** were collected with **2048 by 2048 pixels**, 16 bits. The reconstruction upsample rate is 8 so the resolution of the reconstructed image is **16384 by 16384** pixels. [[dataset]](https://drive.google.com/drive/folders/1oWm-0svOYzlnrEdqr_P8A-UoB4-NcQxF?usp=drive_link).
 
-The reconstruction duration using the fused FP is **100s** on average compared to conventional MATLAB GPU implementation, which tasks about **300s**. Acceleration is about **3 folds**.
+The reconstruction duration using the fused FP is **100s** on average compared to a conventional MATLAB's gpuArray implementation, which takes about **300s**. Acceleration is about **3 folds**.
 
 | Implementation          | Size of input images       | Reconstructed size   | Batch size | Execution duration (s)   | 
 | :----:                | :----:                     | :-----:        | :-----:          | :-----:  |
@@ -41,10 +41,10 @@ The reconstruction duration using the fused FP is **100s** on average compared t
 * Windows Kits 10.0.26100.0 (higher version may be available but not tested)
 
 ## To build the codes
-
+### for codes:
 The cuda codes are designed and implemented based on MATLAB c++ interfaces including "mex.h" and "mxGPUArray.h". The "mex.h" provides basic support for mex and to build the cuda codes. The "mxGPUArray.h" provides support for the array types of MATLAB.
 
-To build the codes "fullyfusedFPM.cu" you will need  "mexcuda" to run 
+To build the codes "fullyfusedFPM.cu", you will need  "mexcuda" to run 
 >mexcuda -lcufft fullyfusedFPM.cu
 
 command in the command line of the MATLAB, at the root of the file "fullyfusedFPM.cu". "-lcufft" is a setting for "mexcuda" that tells the mex to use "cuFFT.h", the CUDA fast Fourier transform library [[cuFFT]](https://docs.nvidia.com/cuda/cufft/).
@@ -72,7 +72,10 @@ Create a new system variable named "LIB", and add the following to the list.
 When running mexcuda in MATLAB, one should first type
 > setenv("NVCC_APPEND_FLAGS", '-allow-unsupported-compiler')
 
-in the MATLAB command line so that MATLAB can use the compiler of the VS 2022 community. Otherwise, MATLAB may pop up errors. 
+in the MATLAB command line so that MATLAB can use the compiler of VS 2022 Community. Otherwise, MATLAB may pop up errors. 
+
+### for codes_v2:
+The codes_v2 folder contains a pure CUDA C++ implementation of FPM reconstruction with MATLAB as an interface for data reading/loading and checking. To build the CUDA codes, first, please make sure that all requirements mentioned above are met. Then run "build.m" in the "codes_v2/cuFPM/" folder. The MATLAB should create a subfolder named "mex_obj" and finish three compilations. The generated "cuFPM_pure.mexw64" is available to be called by MATLAB. 
 
 ## License and Citation
 
@@ -92,4 +95,4 @@ If you use it in your research, we would appreciate a citation via
 ```
 
 ## Questions?
-If you find any questions during the implementation please feel-free to open an issue. Thank you very much :blush:!
+If you find any questions during the implementation, please feel free to open an issue. Thank you very much :blush:!
