@@ -1,4 +1,3 @@
-
 clear
 clc
 
@@ -31,7 +30,8 @@ for led_num = 1:img_all
     uo(led_num) = ledpos_true(i,j,1);
     vo(led_num) = ledpos_true(i,j,2);
     
-    name = sprintf("%03d",k(i,j))
+    name = sprintf("%03d",k(i,j));
+    fprintf("loading %.3f \n",(led_num/img_all) * 100);
     imgname = "raw_images\" + color_full{color_index} + "\" + name + ".tif";
 
     temp = imread(imgname,'PixelRegion',{[rect(2),rect(2)+pix-1],...
@@ -54,11 +54,16 @@ kt = kc(1) + vo;
 kl = kc(3) + uo;
 ledIdx = int32(gpuArray([kl;kt]));
 
+% imRaw_num = imRaw_num(:,:,1:81);
+% ledIdx = ledIdx(:,1:81);
+
+disp("asd");
+
 tic
 [wavefront1,wavefront2] = solve_FPM( ...
                 "target",       wavefront1,...
                 "pupil",        wavefront2,...
-                "obsY",         imRaw_num,...
+                "obsY",         gpuArray(single(imRaw_num)),...
                 "ledidx",       ledIdx,...
                 "circ",         Pupil0,...
                 "batchSize",    26);
