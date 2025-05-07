@@ -29,12 +29,8 @@
 
 #include "mex.h"
 #include "cuda/mxGPUArray.h"
-#include "cuda/kernel_foo.cu"
-#include "cuda/helpers.cu"
-#include <cuda_runtime.h>
-
-#include <iostream>
-#include <stdio.h>
+#include "cuda/kernel_foo.cuh"
+#include "cuda/helpers.cuh"
 
 // convert mwSize to dim3 
 static dim3 size2dim3( const mxGPUArray * in){
@@ -55,11 +51,10 @@ static dim3 size2dim3( const mxGPUArray * in){
  * input[2]: mxGPUArray for amplitude dataset, real 
  * input[3]: mxGPUArray for LED index, int32  
  * input[4]: mxGPUArray for pupil amplitude, real
- * input[4]: mxGPUArray for pupil amplitude, real
  * input[5]: mxArray pratio, upsampling ratio for reconstruction
- * input[5]: mxArray number of epoch, int32
- * input[6]: mxArray number of batch size, int32
- * input[7]: mxArray number of optimizers parameters, learning rate, beta, eps
+ * input[6]: mxArray number of epoch, int32
+ * input[7]: mxArray number of batch size, int32
+ * input[8]: mxArray number of optimizers parameters, learning rate, beta, eps
  * @param out
  * out[0]: mxGPUArray reconstructed target
  * out[1]: mxGPUArray reconstructed pupil
@@ -89,6 +84,11 @@ void mexFunction(
     creal32_T * __restrict__ d_wavefront1;
     creal32_T * __restrict__ d_wavefront2;
 
+    CHECK_THROW(mxIsGPUArray(prhs[0]));
+    CHECK_THROW(mxIsGPUArray(prhs[1]));
+    CHECK_THROW(mxIsGPUArray(prhs[2]));
+    CHECK_THROW(mxIsGPUArray(prhs[3]));
+    CHECK_THROW(mxIsGPUArray(prhs[4]));
     // output parames
     mxInitGPU();
 
@@ -210,6 +210,7 @@ void mexFunction(
             cudaDeviceSynchronize();
 
             N_BLOCKS.z = 1;
+            // learning for wavefront1
             RMSprop_step<<<N_BLOCKS_L, N_THREADS>>>(
                 d_dldw1,
                 beta,
@@ -219,7 +220,7 @@ void mexFunction(
                 mom_w1,
                 d_wavefront1
             );
-            
+            // learning for wavefront2
             RMSprop_step<<<N_BLOCKS, N_THREADS>>>(
                 d_dldw2,
                 beta,
