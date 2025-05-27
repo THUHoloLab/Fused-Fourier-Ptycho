@@ -27,11 +27,13 @@ The reconstruction duration using the fused FP is **100s** on average compared t
 | MATLAB                   | 2048    × 2048 × 361      | 16384 × 16384   | 26            | 800 s   |
 | MATLAB's gpuArray        | 2048    × 2048 × 361     | 16384 × 16384   | 26           | 310 s   |
 | MATLAB + CUDA (cuFPM) | 2048    × 2048 × 361     | 16384 × 16384   | 26          | 100 s   |
-| cuFPM-v2 (pure CUDA c++) | 2048    × 2048 × 361     | 16384 × 16384   | 26          | 68 s   |
-| cuFPM-v2 (pure CUDA c++) | 2048    × 2048 × 361     | 16384 × 16384   | 36          | 54 s   |
-| cuFPM-v2 (pure CUDA c++) | 512    × 512 × 361     | 4096 × 4096   | 26          | 2.5 s   |
-| cuFPM-v2 (pure CUDA c++) | 1024    × 1024 × 361     | 8192 × 8192   | 26          | 10.3 s   |
-| cuFPM-v2 (pure CUDA c++) | 2048    × 2048 × 93     | 16384 × 16384   | 26          | 21 s   |
+| cuFPM-v2 | 2048    × 2048 × 361     | 16384 × 16384   | 26          | 68 s   |
+| cuFPM-v2 | 2048    × 2048 × 361     | 16384 × 16384   | 36          | 54 s   |
+| cuFPM-v2 | 512    × 512 × 361     | 4096 × 4096   | 26          | 2.5 s   |
+| cuFPM-v2 | 1024    × 1024 × 361     | 8192 × 8192   | 26          | 10.3 s   |
+| cuFPM-v2 | 2048    × 2048 × 93     | 16384 × 16384   | 26          | 21 s   |
+
+cuFPM-v2 is a pure CUDA C++ implementation of cuFPM. 
 
 ## Requirements
 * An NVIDIA GPU; All shown results come from an RTX 3090.
