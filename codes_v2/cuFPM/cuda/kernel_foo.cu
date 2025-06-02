@@ -96,7 +96,7 @@ __global__ void getSubpupil(
 
 
 __global__ void cufftShift_2D_kernel(
-    creal32_T* __restrict__ data, 
+    creal32_t* __restrict__ data, 
     int N
 ){
     // 2D Slice & 1D Line
@@ -112,35 +112,27 @@ __global__ void cufftShift_2D_kernel(
     unsigned yIndex = block.group_index().y * block.group_dim().y + block.thread_index().y; 
     unsigned zIndex = block.group_index().z; 
 
-    // Thread Index Converted into 1D Index
-    int index = (yIndex * N) + xIndex + sSlice * zIndex;
-
-    creal32_T regTemp;
-
-    if (xIndex < N / 2)
-    {
-        if (yIndex < N / 2)
-        {
-            regTemp = data[index];
-
-            // First Quad
-            data[index] = data[index + sEq1];
-
-            // Third Quad
-            data[index + sEq1] = regTemp;
-        }
-    }
-    else
-    {
-        if (yIndex < N / 2)
-        {
-            regTemp = data[index];
-
-            // Second Quad
-            data[index] = data[index + sEq2];
-
-            // Fourth Quad
-            data[index + sEq2] = regTemp;
+    bool inside = (xIndex < N) && (yIndex < N);
+    if(inside){
+        // Thread Index Converted into 1D Index
+        int index = (yIndex * N) + xIndex + sSlice * zIndex;
+        creal32_t regTemp;
+        if (xIndex < N / 2){
+            if (yIndex < N / 2){
+                regTemp = data[index];
+                // First Quad
+                data[index] = data[index + sEq1];
+                // Third Quad
+                data[index + sEq1] = regTemp;
+            }
+        }else{
+            if (yIndex < N / 2){
+                regTemp = data[index];
+                // Second Quad
+                data[index] = data[index + sEq2];
+                // Fourth Quad
+                data[index + sEq2] = regTemp;
+            }
         }
     }
 }
