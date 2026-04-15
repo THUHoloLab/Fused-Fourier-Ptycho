@@ -24,21 +24,29 @@ In FPM implementation, a total of **361 images** were collected with **2048 by 2
 
 The reconstruction duration using the fused FP is **100s** on average compared to a conventional MATLAB's gpuArray implementation, which takes about **300s**. Acceleration is about **3 folds**.
 
-| Implementation          | Size of input images       | Reconstructed size   | Batch size | Execution duration (s)   | 
-| :----:                | :----:                     | :-----:        | :-----:          | :-----:  |
-| MATLAB                   | 2048    × 2048 × 361      | 16384 × 16384   | 26            | 800 s   |
-| MATLAB's gpuArray        | 2048    × 2048 × 361     | 16384 × 16384   | 26           | 310 s   |
-| MATLAB + CUDA (cuFPM) | 2048    × 2048 × 361     | 16384 × 16384   | 26          | 100 s   |
-| cuFPM-v2 | 2048    × 2048 × 361     | 16384 × 16384   | 26          | 68 s   |
-| cuFPM-v2 | 2048    × 2048 × 361     | 16384 × 16384   | 36          | 54 s   |
-| cuFPM-v2 | 512    × 512 × 361     | 4096 × 4096   | 26          | 2.5 s   |
-| cuFPM-v2 | 1024    × 1024 × 361     | 8192 × 8192   | 26          | 10.3 s   |
-| cuFPM-v2 | 2048    × 2048 × 93     | 16384 × 16384   | 26          | 21 s   |
-| cuFPM-v3 (2026) | 2048    × 2048 × 361     | 16384 × 16384   | 26          | 25.31 s   |
-| cuFPM-v3 (2026) | 512    × 512 × 361     | 4096 × 4096   | 26          | 1.38 s   |
-| cuFPM-v3 (2026) | 2048    × 2048 × 93     | 16384 × 16384   | 26          | 6.21 s   |
-| cuFPM-v3 (2026) | 512    × 512 × 93     | 4096 × 4096   | 26          | 0.39 s   |
+### Performance Comparison (Identical Settings)
+| Implementation        | Input Size        | Recon Size        | Batch | Time (s) | Speedup |
+|----------------------|------------------|-------------------|-------|----------|---------|
+| MATLAB               | 2048×2048×361    | 16384×16384       | 26    | 800      | 1×      |
+| MATLAB gpuArray      | 2048×2048×361    | 16384×16384       | 26    | 310      | 2.58×   |
+| MATLAB + CUDA        | 2048×2048×361    | 16384×16384       | 26    | 100      | 8×      |
+| cuFPM-v2 (2025)      | 2048×2048×361    | 16384×16384       | 26    | 68       | 11.76×  |
+| cuFPM-v3 (2026)      | 2048×2048×361    | 16384×16384       | 26    | 25.31    | 31.6×   |
 
+### Batch Scaling
+| Implementation | Input Size        | Batch | Time (s) |
+|----------------|------------------|-------|----------|
+| cuFPM-v2       | 2048×2048×361    | 26    | 68       |
+| cuFPM-v2       | 2048×2048×361    | 36    | 54       |
+
+### Resolution Scaling
+| Implementation | Input Size        | Recon Size        | Time (s) |
+|----------------|------------------|-------------------|----------|
+| cuFPM-v2       | 512×512×361      | 4096×4096         | 2.5      |
+| cuFPM-v3       | 512×512×361      | 4096×4096         | 1.38     |
+| cuFPM-v2       | 1024×1024×361    | 8192×8192         | 10.3     |
+| cuFPM-v2       | 2048×2048×361    | 16384×16384       | 68       |
+| cuFPM-v3       | 2048×2048×361    | 16384×16384       | 25.31    |
 
 cuFPM-v2 is a pure CUDA C++ implementation of cuFPM. 
 
