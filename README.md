@@ -2,11 +2,11 @@
 
 This implements MATLAB + CUDA programming for the acceleration of Fourier ptychographic microscopy (FPM) reconstruction. FPM's forward and backward progress are all calculated purely by CUDA in "fullyfusedFPM.cu".
 
+:rocket: We release cuFPM v3, which adopts more aggressive optimizations and a more compact fused kernel design. It achieves nearly 3× speedup over v2, and up to 32× acceleration compared to the MATLAB CPU implementation.
 :bell: The codes were built based on MATLAB 2024b and CUDA v12.8, and were tested with a graphic card of NVIDIA RTX 3090 24 GB.
-
 :collision: **The codes are only available for images with even numbers of pixels** due to the implementation of the "fftshift" kernel. [[cufftShift]](https://github.com/marwan-abdellah/cufftShift)
-## Acceleration ratio
 
+## Acceleration ratio
 The codes were tested on a personal desktop <br>
 * OS: WINDOWS 11 Pro x64, with 128GB RAM <br>
 * GPU: NVIDIA RTX 3090 24GB <br>
@@ -32,6 +32,11 @@ The reconstruction duration using the fused FP is **100s** on average compared t
 | cuFPM-v2 | 512    × 512 × 361     | 4096 × 4096   | 26          | 2.5 s   |
 | cuFPM-v2 | 1024    × 1024 × 361     | 8192 × 8192   | 26          | 10.3 s   |
 | cuFPM-v2 | 2048    × 2048 × 93     | 16384 × 16384   | 26          | 21 s   |
+| cuFPM-v3 (2026) | 2048    × 2048 × 361     | 16384 × 16384   | 26          | 25.31 s   |
+| cuFPM-v3 (2026) | 512    × 512 × 361     | 4096 × 4096   | 26          | 1.38 s   |
+| cuFPM-v3 (2026) | 2048    × 2048 × 93     | 16384 × 16384   | 26          | 6.21 s   |
+| cuFPM-v3 (2026) | 512    × 512 × 93     | 4096 × 4096   | 26          | 0.39 s   |
+
 
 cuFPM-v2 is a pure CUDA C++ implementation of cuFPM. 
 
