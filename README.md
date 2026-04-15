@@ -28,7 +28,7 @@ The reconstruction duration using the fused FP is **100s** on average compared t
 <div align="center">
 	
 | Implementation        | Input Size        | Recon Size        | Batch | Time (s) | Speedup |
-|----------------------|------------------|-------------------|-------|----------|---------|
+|----------------------|------------------|-------------------|:-------:|:----------:|---------|
 | MATLAB               | 2048×2048×361    | 16384×16384       | 26    | 800      | 1×      |
 | MATLAB gpuArray      | 2048×2048×361    | 16384×16384       | 26    | 310      | 2.58×   |
 | MATLAB + CUDA        | 2048×2048×361    | 16384×16384       | 26    | 100      | 8×      |
@@ -41,9 +41,12 @@ The reconstruction duration using the fused FP is **100s** on average compared t
 <div align="center">
 	
 | Implementation | Input Size        | Batch | Time (s) |
-|----------------|------------------|-------|----------|
+|----------------|------------------|:-------:|----------|
 | cuFPM-v2       | 2048×2048×361    | 26    | 68       |
 | cuFPM-v2       | 2048×2048×361    | 36    | 54       |
+| cuFPM-v3       | 2048×2048×361    | 16    | 30.42      |
+| cuFPM-v3       | 2048×2048×361    | 26    | 22.31      |
+| cuFPM-v3       | 2048×2048×361    | 32    | 20.43      |
 
 </div>
 
@@ -56,7 +59,7 @@ The reconstruction duration using the fused FP is **100s** on average compared t
 | cuFPM-v3       | 512×512×361      | 4096×4096         | 1.38     |
 | cuFPM-v2       | 1024×1024×361    | 8192×8192         | 10.3     |
 | cuFPM-v2       | 2048×2048×361    | 16384×16384       | 68       |
-| cuFPM-v3       | 2048×2048×361    | 16384×16384       | 25.31    |
+| cuFPM-v3       | 2048×2048×361    | 16384×16384       | 22.31    |
 
 </div>
 
