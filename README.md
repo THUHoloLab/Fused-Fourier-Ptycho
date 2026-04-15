@@ -1,10 +1,12 @@
 # CUDA-fused Fourier ptychography (cuFPM)
 
-This implements MATLAB + CUDA programming for the acceleration of Fourier ptychographic microscopy (FPM) reconstruction. FPM's forward and backward progress are all calculated purely by CUDA in "fullyfusedFPM.cu".
+This implements MATLAB + CUDA programming for the acceleration of Fourier ptychographic microscopy (FPM) reconstruction. FPM's forward and backward progress are all calculated purely by CUDA in "fullyfusedFPM.cu". <br>
 
-:rocket: We release cuFPM v3, which adopts more aggressive optimizations and a more compact fused kernel design. It achieves nearly 3× speedup over v2, and up to 32× acceleration compared to the MATLAB CPU implementation.
-:bell: The codes were built based on MATLAB 2024b and CUDA v12.8, and were tested with a graphic card of NVIDIA RTX 3090 24 GB.
-:collision: **The codes are only available for images with even numbers of pixels** due to the implementation of the "fftshift" kernel. [[cufftShift]](https://github.com/marwan-abdellah/cufftShift)
+:rocket: We release cuFPM v3, which adopts more aggressive optimizations and a more compact fused kernel design. It achieves nearly 3× speedup over v2, and up to 32× acceleration compared to the MATLAB CPU implementation. <br>
+
+:bell: The codes were built based on MATLAB 2024b and CUDA v12.8, and were tested with a graphic card of NVIDIA RTX 3090 24 GB. <br>
+
+:collision: **The codes are only available for images with even numbers of pixels** due to the implementation of the "fftshift" kernel. [[cufftShift]](https://github.com/marwan-abdellah/cufftShift) <br>
 
 ## Acceleration ratio
 The codes were tested on a personal desktop <br>
