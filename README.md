@@ -26,6 +26,7 @@ The reconstruction duration using the fused FP is **100s** on average compared t
 
 ### Performance Comparison (Identical Settings)
 <div align="center">
+	
 | Implementation        | Input Size        | Recon Size        | Batch | Time (s) | Speedup |
 |----------------------|------------------|-------------------|-------|----------|---------|
 | MATLAB               | 2048×2048×361    | 16384×16384       | 26    | 800      | 1×      |
@@ -33,18 +34,22 @@ The reconstruction duration using the fused FP is **100s** on average compared t
 | MATLAB + CUDA        | 2048×2048×361    | 16384×16384       | 26    | 100      | 8×      |
 | cuFPM-v2 (2025)      | 2048×2048×361    | 16384×16384       | 26    | 68       | 11.76×  |
 | cuFPM-v3 (2026)      | 2048×2048×361    | 16384×16384       | 26    | 25.31    | 31.6×   |
+
 </div>
 
 ### Batch Scaling
 <div align="center">
+	
 | Implementation | Input Size        | Batch | Time (s) |
 |----------------|------------------|-------|----------|
 | cuFPM-v2       | 2048×2048×361    | 26    | 68       |
 | cuFPM-v2       | 2048×2048×361    | 36    | 54       |
+
 </div>
 
 ### Resolution Scaling
 <div align="center">
+	
 | Implementation | Input Size        | Recon Size        | Time (s) |
 |----------------|------------------|-------------------|----------|
 | cuFPM-v2       | 512×512×361      | 4096×4096         | 2.5      |
@@ -52,6 +57,7 @@ The reconstruction duration using the fused FP is **100s** on average compared t
 | cuFPM-v2       | 1024×1024×361    | 8192×8192         | 10.3     |
 | cuFPM-v2       | 2048×2048×361    | 16384×16384       | 68       |
 | cuFPM-v3       | 2048×2048×361    | 16384×16384       | 25.31    |
+
 </div>
 
 cuFPM-v2 is a pure CUDA C++ implementation of cuFPM. 
