@@ -1,7 +1,5 @@
 # CUDA-fused Fourier ptychography (cuFPM)
 
-![downloads](https://img.shields.io/github/downloads/THUHoloLab/Fused-Fourier-Ptycho/total?label=downloads&color=brightgreen)
-
 This implements MATLAB + CUDA programming for the acceleration of Fourier ptychographic microscopy (FPM) reconstruction. FPM's forward and backward progress are all calculated purely by CUDA in "fullyfusedFPM.cu". <br>
 
 :rocket: (2026/4) We release cuFPM v3, which adopts more aggressive optimizations and a more compact fused kernel design. It achieves nearly 3× speedup over v2, and up to 32× acceleration compared to the MATLAB CPU implementation. <br>
